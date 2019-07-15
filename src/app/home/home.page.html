@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <div>
+  <div class="dashboard">
       <ion-grid>
         <ion-row>
           <ion-col size="12" size-sm>
@@ -70,20 +70,20 @@
                 <ion-card-content>
                   <ion-row class="ion-text-center">
                     <ion-col size="4">
-                      <div class="ion-padding">
+                      <div class="ion-padding-vertical">
                         <h2>4</h2>
                         <p>Open</p>
                       </div>
                     </ion-col>
                     <ion-col size="4">
                       <div class="ion-padding-vertical">
-                        <h2>1</h2>
+                        <h2 class="color-1">1</h2>
                         <p>Unassigned</p>
                       </div>
                     </ion-col>
                     <ion-col size="4">
-                      <div class="ion-padding">
-                        <h2>4</h2>
+                      <div class="ion-padding-vertical">
+                        <h2 class="color-2">4</h2>
                         <p>Overdue</p>
                       </div>
                     </ion-col>
@@ -115,23 +115,9 @@
                   </ion-item>
                 
                   <ion-card-content>
-                    <!-- <ion-row class="ion-text-center">
-                      <ion-col size="6">
-                        <div class="ion-padding">
-                          <h2>0</h2>
-                          <p>Today</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="6">
-                        <div class="ion-padding">
-                          <h2>2</h2>
-                          <p>Total</p>
-                        </div>
-                      </ion-col>
-                    </ion-row> -->
                     <ion-row>
                       <ion-col size="12" style="max-height: 432px; overflow: auto;">
-                        <div class="">
+                        <div style="padding-top: 16px;">
                           <table>
                             <thead>
                               <tr>
@@ -140,6 +126,13 @@
                                 <th scope="col">Usage %</th>
                               </tr>
                             </thead>
+                            <tbody>
+                              <tr *ngFor="let table of tableData">
+                                <td>{{ table.keywordsUsed }}</td>
+                                <td>{{ table.total }}</td>
+                                <td>{{ table.usage }} %</td>
+                              </tr>
+                            </tbody>
                           </table>
                         </div>
                       </ion-col>
@@ -149,5 +142,65 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-md>
+              <ion-card>
+                <ion-item lines="full">
+                  <ion-text fill="outline" slot="start">Questions</ion-text>
+                  <ion-icon name="refresh" slot="end"></ion-icon>
+                </ion-item>
+              
+                <ion-card-content>
+                  <ion-row class="ion-text-center">
+                    <ion-col size="4">
+                      <div class="ion-padding-vertical">
+                        <h2>26</h2>
+                        <p>Total Questions</p>
+                      </div>
+                    </ion-col>
+                    <ion-col size="4">
+                      <div class="ion-padding-vertical">
+                        <h2 class="color-1">14</h2>
+                        <p>Answered</p>
+                      </div>
+                    </ion-col>
+                    <ion-col size="4">
+                      <div class="ion-padding-vertical">
+                        <h2 class="color-2">12</h2>
+                        <p>Unanswered</p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+          <ion-col size="12" size-sm>
+            <ion-card>
+              <ion-item lines="full">
+                <ion-text fill="outline" slot="start">Channel Used</ion-text>
+                <ion-icon name="refresh" slot="end"></ion-icon>
+              </ion-item>
+            
+              <ion-card-content>
+                <ion-row class="ion-text-center">
+                  <ion-col size="6">
+                    <div class="ion-padding">
+                      <h2>15</h2>
+                      <p>Website</p>
+                    </div>
+                  </ion-col>
+                  <ion-col size="6">
+                    <div class="ion-padding">
+                      <h2>0</h2>
+                      <p>Social Media</p>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
   </div>
 </ion-content>

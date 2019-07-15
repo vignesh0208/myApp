@@ -9,8 +9,22 @@ declare var google;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {}
+  tableData: any;
+  constructor(public navCtrl: NavController) {
+    this.tableData = [
+      { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
+      { 'keywordsUsed': 'more', 'total': '7', 'usage': '26.92' },
+      { 'keywordsUsed': 'train', 'total': '6', 'usage': '23.08' },
+      { 'keywordsUsed': 'information', 'total': '6', 'usage': '23.08' },
+      { 'keywordsUsed': 'yes', 'total': '6', 'usage': '19.23' },
+      { 'keywordsUsed': 'book', 'total': '5', 'usage': '19.23' },
+      { 'keywordsUsed': 'ticket', 'total': '4', 'usage': '15.38' },
+      { 'keywordsUsed': 'fastest', 'total': '4', 'usage': '15.38' },
+      { 'keywordsUsed': 'in', 'total': '4', 'usage': '11.54' },
+      { 'keywordsUsed': 'india', 'total': '3', 'usage': '11.54' },
+      { 'keywordsUsed': 'tatkal', 'total': '3', 'usage': '7.69' }
+    ]
+  }
 
   lineChartData;
 
