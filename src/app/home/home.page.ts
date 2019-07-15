@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 
 declare var google;
 
@@ -10,7 +11,8 @@ declare var google;
 })
 export class HomePage {
   tableData: any;
-  constructor(public navCtrl: NavController) {
+  dataReturned: any;
+  constructor(public navCtrl: NavController, public modalController: ModalController) {
     this.tableData = [
       { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
       { 'keywordsUsed': 'more', 'total': '7', 'usage': '26.92' },
@@ -62,5 +64,22 @@ export class HomePage {
       }
     };
   }
-
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ModalPage,
+      componentProps: {
+        "paramID": 123,
+        "paramTitle": "Test Title"
+      }
+    });
+ 
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+ 
+    return await modal.present();
+  }
 }
