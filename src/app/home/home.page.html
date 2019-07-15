@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-sm>
+              <ion-card>
+                <ion-item lines="full">
+                  <ion-text fill="outline" slot="start">No. of Visitors</ion-text>
+                  <ion-icon name="refresh" slot="end"></ion-icon>
+                </ion-item>
+              
+                <ion-card-content>
+                  <ion-row class="ion-text-center">
+                    <ion-col size="6">
+                      <div class="ion-padding">
+                        <h2>0</h2>
+                        <p>Today</p>
+                      </div>
+                    </ion-col>
+                    <ion-col size="6">
+                      <div class="ion-padding">
+                        <h2>15</h2>
+                        <p>Total</p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+          <ion-col size="12" size-sm>
+              <ion-card>
+                <ion-item lines="full">
+                  <ion-text fill="outline" slot="start">No. of Leads</ion-text>
+                  <ion-icon name="refresh" slot="end"></ion-icon>
+                </ion-item>
+              
+                <ion-card-content>
+                  <ion-row class="ion-text-center">
+                    <ion-col size="6">
+                      <div class="ion-padding">
+                        <h2>0</h2>
+                        <p>Today</p>
+                      </div>
+                    </ion-col>
+                    <ion-col size="6">
+                      <div class="ion-padding">
+                        <h2>2</h2>
+                        <p>Total</p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+          <ion-col size="12" size-md>
+              <ion-card>
+                <ion-item lines="full">
+                  <ion-text fill="outline" slot="start">No. of Tickets</ion-text>
+                  <ion-icon name="refresh" slot="end"></ion-icon>
+                </ion-item>
+              
+                <ion-card-content>
+                  <ion-row class="ion-text-center">
+                    <ion-col size="4">
+                      <div class="ion-padding">
+                        <h2>4</h2>
+                        <p>Open</p>
+                      </div>
+                    </ion-col>
+                    <ion-col size="4">
+                      <div class="ion-padding-vertical">
+                        <h2>1</h2>
+                        <p>Unassigned</p>
+                      </div>
+                    </ion-col>
+                    <ion-col size="4">
+                      <div class="ion-padding">
+                        <h2>4</h2>
+                        <p>Overdue</p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-sm>
+                <ion-card>
+                  <ion-item lines="full">
+                    <ion-text fill="outline" slot="start">Visitor Trends (Over The Last 7 Days)</ion-text>
+                    <ion-icon name="refresh" slot="end"></ion-icon>
+                  </ion-item>
+                
+                  <ion-card-content>
+                      <google-chart [data]="lineChartData" width="500" height="400"></google-chart>
+                  </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12" size-sm>
+                <ion-card>
+                  <ion-item lines="full">
+                    <ion-text fill="outline" slot="start">Keyword Frequency</ion-text>
+                    <ion-icon name="refresh" slot="end"></ion-icon>
+                  </ion-item>
+                
+                  <ion-card-content>
+                    <!-- <ion-row class="ion-text-center">
+                      <ion-col size="6">
+                        <div class="ion-padding">
+                          <h2>0</h2>
+                          <p>Today</p>
+                        </div>
+                      </ion-col>
+                      <ion-col size="6">
+                        <div class="ion-padding">
+                          <h2>2</h2>
+                          <p>Total</p>
+                        </div>
+                      </ion-col>
+                    </ion-row> -->
+                    <ion-row>
+                      <ion-col size="12" style="max-height: 432px; overflow: auto;">
+                        <div class="">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th scope="col">Keywords Used</th>
+                                <th scope="col">Total Appearance</th>
+                                <th scope="col">Usage %</th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-content>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  </div>
+</ion-content>
