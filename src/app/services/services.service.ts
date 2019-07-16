@@ -7,15 +7,21 @@ export class ServicesService {
   public dataValue: any;
   constructor() {
     this.dataValue = [
-      {name:'rob',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'UN rejects Saeed\'s plea for removal fro..',id:'1', icons:'call_received',iconColor:'red', time:'Just now'},
-      {name:'sansa',image:'https://semantic-ui.com/images/avatar2/large/molly.png',message:'Seeking ban on Pak despite ICC snub..',id:'2',icons:'call_received',iconColor:'green', time:'4 minutes ago'},
-      {name:'arya',image:'https://semantic-ui.com/images/avatar2/large/molly.png',message:'Hizbul behind Jammu grenade attack: ..',id:'3',icons:'call_received',iconColor:'red', time:'14 minutes ago'},
-      {name:'jon',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Celebrate Women\'s Day',id:'4',icons:'call_received',iconColor:'red', time:'34 minutes ago'},
-      {name:'bran',image:'https://semantic-ui.com/images/avatar2/large/elyse.png',message:'Apple CEO \'Tim Apple\'',id:'5',icons:'call_made',iconColor:'green', time:'40 minutes ago'},
-      {name:'ned',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'UN rejects  plea for removal fro..',id:'6',icons:'call_made',iconColor:'green', time:'42 minutes ago'},
-      {name:'tyrion',image:'https://semantic-ui.com/images/avatar2/large/elyse.png',message:'Hizbul behind Jammu attack: ..',id:'7',icons:'call_received',iconColor:'red', time:'45 minutes ago'},
-      {name:'robert',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Seeking ban on despite ICC snub..',id:'8',icons:'call_made',iconColor:'green', time:'50 minutes ago'},
-      {name:'nick',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Seeking ban on despite BCC snub..',id:'8',icons:'call_made',iconColor:'green', time:'Today, 1:29 pm'}
+      {name:'rob',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Such programs are often designed to convincingly simulate how a human would behave as a conversational partner, although as of 2019, they are far short of being able to pass the Turing test.',id:'1',time:'Just now',color: this.getRandomColor()},
+      {name:'sansa',image:'https://semantic-ui.com/images/avatar2/large/molly.png',message:'Build the perfect custom bot and grow your business faster. Integrated platform.',id:'2',time:'4 minutes ago',color: this.getRandomColor()},
+      {name:'arya',image:'https://semantic-ui.com/images/avatar2/large/molly.png',message:'Personalized Onboarding. Targeted Live Chat. Marketing Automation.',id:'3',time:'14 minutes ago',color: this.getRandomColor()},
+      {name:'jon',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Easy Setup. Services: Website Live Chat, Customer Engagement, Customer Support, In-App Messaging, Targeted Emails.',id:'4',time:'34 minutes ago',color: this.getRandomColor()},
+      {name:'bran',image:'https://semantic-ui.com/images/avatar2/large/elyse.png',message:'Build a chatbot for any service you need. ChatBot.com is basically your personal chatbot factory with no IT skills needed.',id:'5',time:'40 minutes ago',color: this.getRandomColor()},
+      {name:'ned',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Love them or hate them, chatbots are here to stay.',id:'6',time:'42 minutes ago',color: this.getRandomColor()},
+      {name:'tyrion',image:'https://semantic-ui.com/images/avatar2/large/elyse.png',message:'A chatbot is a computer program which conducts a conversation via auditory or textual methods.',id:'7',time:'45 minutes ago',color: this.getRandomColor()},
+      {name:'robert',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'A chatbot is a computer program which conducts a conversation via auditory or textual methods.',id:'8',time:'50 minutes ago',color: this.getRandomColor()},
+      {name:'nick',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Build a chatbot for any service you need. ChatBot.com is basically your personal chatbot factory with no IT skills needed.',id:'8',time:'Today, 1:29 pm',color: this.getRandomColor()}
     ];
+  }
+
+  getRandomColor()
+  {
+    var color = Math.floor(0x1000000 * Math.random()).toString(16);
+    return '#' + ('000000' + color).slice(-6);
   }
 }

@@ -8,25 +8,20 @@
 </ion-header>
 
 <ion-content class="conversation">
-  <ion-item lines="full">
-    <ion-thumbnail slot="start">
-      <div class="image">
-        <span>V</span>
-      </div>
-    </ion-thumbnail>
-    <ion-label>
-      <div class="text-wrapper">
-        <h4 class="">Ionic ITEM</h4>
-        <span>14/05/19</span>
-      </div>
-      <p class="chat-para">Sorry, I couldn't find any information for you this time. Trust me I never make a mistake twice.</p>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="full">
-    <ion-thumbnail slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-thumbnail>
-    <ion-label>Item Avatar</ion-label>
-  </ion-item>
-  <ion-text *ngFor="let service of servicesService.dataValue">{{ service.name }}</ion-text>
+  <div *ngFor="let service of servicesService.dataValue">
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <div class="image" [ngStyle]="{'backgroundColor': service.color}">
+          <span>{{ service.name | slice:0:1 }}</span>
+        </div>
+      </ion-thumbnail>
+      <ion-label>
+        <div class="text-wrapper">
+          <h4>{{ service.name }}</h4>
+          <span>{{ service.time }}</span>
+        </div>
+        <p class="chat-para">{{ service.message }}</p>
+      </ion-label>
+    </ion-item>
+  </div>
 </ion-content>
