@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 import { HomePage } from './home.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild([
       {
         path: '',
