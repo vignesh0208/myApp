@@ -17,4 +17,29 @@
 
         }
     }
+    .text-wrapper {
+        display: flex;
+        justify-content: space-between;
+        h4 {
+            font-size: 14px;
+            text-transform: capitalize;
+            font-weight: 400;
+            margin: 0;
+        }
+        span {
+            font-size: 11px;
+            color: #6a7c8b;
+            text-transform: lowercase;
+        }
+    }
+    .chat-para {
+        margin: 5px 0 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        font-weight: 300;
+        color: #6a7c8b;
+        max-width: 250px;
+    }
 }
