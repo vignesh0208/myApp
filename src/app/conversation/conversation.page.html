@@ -28,5 +28,5 @@
     </ion-thumbnail>
     <ion-label>Item Avatar</ion-label>
   </ion-item>
-
+  <ion-text *ngFor="let service of servicesService.dataValue">{{ service.name }}</ion-text>
 </ion-content>
