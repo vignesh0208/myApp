@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
+import { ServicesService } from "../services/services.service";
 
 declare var google;
 
@@ -12,7 +13,7 @@ declare var google;
 export class HomePage {
   tableData: any;
   dataReturned: any;
-  constructor(public navCtrl: NavController, public modalController: ModalController) {
+  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService) {
     this.tableData = [
       { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
       { 'keywordsUsed': 'more', 'total': '7', 'usage': '26.92' },

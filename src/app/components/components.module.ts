@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { CommonModule } from "@angular/common";
 
 import { FooterComponent } from './footer/footer.component';
 import { CardsComponent } from './cards/cards.component'
 
 @NgModule({
   declarations: [FooterComponent, CardsComponent],
-  imports: [IonicModule],
+  imports: [IonicModule, CommonModule],
   exports: [FooterComponent, CardsComponent]
 })
 

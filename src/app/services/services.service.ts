@@ -5,7 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class ServicesService {
   public dataValue: any;
+  public cardValue: any;
   constructor() {
+    this.cardValue = [
+      {name: 'No. of Visitors', value: [ { val1:'0', val2:'Today' }, { val1:'15', val2:'Total' } ]},
+      {name: 'No. of Leads', value: [ { val1:'0', val2:'Today' }, { val1:'2', val2:'Total' } ]}
+    ]
     this.dataValue = [
       {name:'rob',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Such programs are often designed to convincingly simulate how a human would behave as a conversational partner, although as of 2019, they are far short of being able to pass the Turing test.',id:'1',time:'Just now',color: this.getRandomColor()},
       {name:'sansa',image:'https://semantic-ui.com/images/avatar2/large/molly.png',message:'Build the perfect custom bot and grow your business faster. Integrated platform.',id:'2',time:'4 minutes ago',color: this.getRandomColor()},
