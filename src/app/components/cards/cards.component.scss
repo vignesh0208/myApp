@@ -1,0 +1,38 @@
+.chartjs-render-monitor {
+    -webkit-animation: chartjs-render-animation 0.001s;
+    animation: chartjs-render-animation 0.001s;
+}
+.dashboard table, .dashboard table td, .dashboard table th {
+    border: 1px solid #dee2e6;
+}
+
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #182128; 
+}
+.color-1 {
+    color: #2fa738;
+}
+.color-2 {
+    color: #d63444;
+}
+p {
+    margin: 0;
+    font-size: 14px;
+    color: #182128;
+}
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    th, td {
+        font-size: 14px;
+        font-weight: 400;
+        padding: 8px 16px;
+        color: #182128;
+    }
+}
