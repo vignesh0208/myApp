@@ -13,11 +13,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {}
 
   homePage() {
-    console.log("hello");
     this.router.navigateByUrl('/');
   }
   conversationPage() {
-    console.log("hello working");
     this.router.navigateByUrl('/conversation');
   }
 }
