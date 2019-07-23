@@ -9,7 +9,7 @@
 
 <ion-content class="conversation">
   <div *ngFor="let service of servicesService.dataValue">
-    <ion-item lines="full">
+    <ion-item lines="full" [routerLink]="'/chatpage/' + service.id" routerDirection="forward">
       <ion-thumbnail slot="start">
         <div class="image" [ngStyle]="{'backgroundColor': service.color}">
           <span>{{ service.name | slice:0:1 }}</span>
