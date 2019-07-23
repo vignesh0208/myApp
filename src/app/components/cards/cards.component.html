@@ -1,20 +1,24 @@
-<ion-col size="12" size-sm>
-<div *ngFor="let card of servicesService.cardValue">
-  <ion-card>
-    <ion-item lines="full">
-      <ion-text fill="outline" slot="start">{{ card.name }}</ion-text>
-      <ion-icon name="refresh" slot="end" routerLink="/conversation" routerDirection="forward"></ion-icon>
-    </ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" *ngFor="let card of servicesService.cardValue" size-sm >
+      <ion-card>
+        <ion-item lines="full">
+          <ion-text fill="outline" slot="start">{{ card.name }}</ion-text>
+          <ion-icon name="refresh" slot="end" routerLink="/conversation" routerDirection="forward"></ion-icon>
+        </ion-item>
 
-    <ion-card-content>
-      <ion-row class="ion-text-center">
-        <ion-col size="6" *ngFor="let cards of card.value">
-          <div class="ion-padding">
-            <h2>{{ cards.val1 }}</h2>
-            <p>{{ cards.val2 }}</p>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-</div>
+        <ion-card-content>
+          <ion-row class="ion-text-center">
+            <ion-col size="6" *ngFor="let cards of card.value;let i = index">
+              <div class="ion-padding-vertical">
+                <!-- <p>{{ i+1 }}</p> -->
+                <h2>{{ cards.val1 }}</h2>
+                <p>{{ cards.val2 }}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

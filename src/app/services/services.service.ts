@@ -8,8 +8,9 @@ export class ServicesService {
   public cardValue: any;
   constructor() {
     this.cardValue = [
-      {name: 'No. of Visitors', value: [ { val1:'0', val2:'Today' }, { val1:'15', val2:'Total' } ]},
-      {name: 'No. of Leads', value: [ { val1:'0', val2:'Today' }, { val1:'2', val2:'Total' } ]}
+      {name: 'No. of Visitors', size: 'size-sm', value: [ { val1:'0', val2:'Today' }, { val1:'15', val2:'Total' } ]},
+      {name: 'No. of Leads', size: 'size-sm', value: [ { val1:'0', val2:'Today' }, { val1:'2', val2:'Total' } ]},
+      {name: 'No. of Tickets', size: 'size-md', value: [ { val1:'4', val2:'Open' }, { val1:'1', val2:'Unassigned' }, { val1:'4', val2:'Overdue' } ]}
     ]
     this.dataValue = [
       {name:'rob',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Such programs are often designed to convincingly simulate how a human would behave as a conversational partner, although as of 2019, they are far short of being able to pass the Turing test.',id:'1',time:'Just now',color: this.getRandomColor()},
