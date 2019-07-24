@@ -26,45 +26,45 @@ export class ServicesService {
     ];
     this.messages = [
       {
-         senderType: 'user',
-         name: 'Vicky',
-         message: 'Heelllo'
+        senderType: 'bot',
+        name: 'Bot',
+        message: 'Our culture is to succeed, but have fun while doing it.'
       },
       {
-         senderType: 'bot',
-         name: 'Bot',
-         message: 'Hey!, how may i help you!'
+        senderType: 'user',
+        name: 'Vicky',
+        message: 'What is your company culture?'
       },
       {
-          senderType: 'user',
-          name: 'Vicky',
-          message: 'How are you?'
-       },
-       {
-          senderType: 'bot',
-          name: 'Bot',
-          message: 'Am doing good, how about you?'
-       },
-       {
-          senderType: 'user',
-          name: 'Vicky',
-          message: 'What is your company about?'
-       },
-       {
-          senderType: 'bot',
-          name: 'Bot',
-          message: 'Were in the business of making our customers happy'
-       },
-       {
-          senderType: 'user',
-          name: 'Vicky',
-          message: 'What is your company culture?'
-       },
-       {
-          senderType: 'bot',
-          name: 'Bot',
-          message: 'Our culture is to succeed, but have fun while doing it.'
-       },
+        senderType: 'bot',
+        name: 'Bot',
+        message: 'Were in the business of making our customers happy'
+      },
+      {
+        senderType: 'user',
+        name: 'Vicky',
+        message: 'What is your company about?'
+      },
+      {
+        senderType: 'bot',
+        name: 'Bot',
+        message: 'Am doing good, how about you?'
+      },
+      {
+        senderType: 'user',
+        name: 'Vicky',
+        message: 'How are you?'
+      },
+      {
+        senderType: 'bot',
+        name: 'Bot',
+        message: 'Hey!, how may i help you!'
+      },
+      {
+        senderType: 'user',
+        name: 'Vicky',
+        message: 'Heelllo'
+      },
     ];
   }
 

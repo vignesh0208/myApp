@@ -10,7 +10,8 @@ import { ServicesService } from "../services/services.service";
 export class ProfilePage implements OnInit {
   public id: any;
   public dataValue: any;
-  constructor(private route: ActivatedRoute, private dataService: ServicesService) { }
+  public messages: any;
+  constructor(private route: ActivatedRoute, private servicesService: ServicesService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -18,7 +19,7 @@ export class ProfilePage implements OnInit {
 }
 
   getValueInfo() {
-      this.dataValue = this.dataService.getIdnumValue(this.id);
+      this.dataValue = this.servicesService.getIdnumValue(this.id);
   }
 
 }

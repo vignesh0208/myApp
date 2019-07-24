@@ -1,3 +1,18 @@
-<p>
-  chatpage works!
-</p>
+<section class="sidenav">
+    <div class="body">
+        <div class="chat-area" *ngFor="let msg of servicesService.messages">
+            <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
+            <div *ngIf='msg.senderType == "bot"'>
+                <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
+            </div>
+                <div class="msg">
+                    <p>{{msg.message}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <textarea id="message1" type="text" class="footer-input" placeholder="Ask me something" wrap="hard"></textarea>
+        <button class="footer-btn" id="submit" onsubmit="submit()"><ion-icon name="send"></ion-icon></button>
+    </div>
+</section>
