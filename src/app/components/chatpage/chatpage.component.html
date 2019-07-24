@@ -1,5 +1,6 @@
 <section class="sidenav">
     <div class="body">
+      <div id="app">
         <div class="chat-area" *ngFor="let msg of servicesService.messages">
             <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
             <div *ngIf='msg.senderType == "bot"'>
@@ -10,9 +11,10 @@
                 </div>
             </div>
         </div>
+      </div>
     </div>
     <div class="footer">
-        <textarea [(ngModel)]="message" type="text" class="footer-input" placeholder="Ask me something"></textarea>
+        <textarea [(ngModel)]="message" type="text" class="footer-input" (keyup.enter)="btnFunction($event)" placeholder="Ask me something"></textarea>
         <button ion-button class="footer-btn" (click)="btnVal()"><ion-icon name="send"></ion-icon></button>
     </div>
 </section>

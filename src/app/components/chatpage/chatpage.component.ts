@@ -14,6 +14,21 @@ export class ChatpageComponent implements OnInit {
   ngOnInit() {}
 
   btnVal() {
-    console.log(this.message);
+    var datavalue = {
+      message: this.message.trim(),
+      name: "Vicky",
+      senderType: "user"
+    }
+    if(datavalue.message != "") {
+      this.servicesService.messages.push(datavalue);
+      this.message = "";
+    }
+  }
+
+  btnFunction(event) {
+    if(event.keyCode == '13' && !event.shiftKey) {
+      console.log("working")
+      this.btnVal();
+    }
   }
 }
