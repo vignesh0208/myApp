@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ServicesService {
   public dataValue: any;
   public cardValue: any;
+  public messages: any;
   constructor() {
     this.cardValue = [
       {name: 'No. of Visitors', size: 'size-sm', value: [ { val1:'0', val2:'Today' }, { val1:'15', val2:'Total' } ]},
@@ -22,6 +23,48 @@ export class ServicesService {
       {name:'tyrion',image:'https://semantic-ui.com/images/avatar2/large/elyse.png',message:'A chatbot is a computer program which conducts a conversation via auditory or textual methods.',id:'7',time:'45 minutes ago',color: this.getRandomColor()},
       {name:'robert',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'A chatbot is a computer program which conducts a conversation via auditory or textual methods.',id:'8',time:'50 minutes ago',color: this.getRandomColor()},
       {name:'nick',image:'https://semantic-ui.com/images/avatar2/large/matthew.png',message:'Build a chatbot for any service you need. ChatBot.com is basically your personal chatbot factory with no IT skills needed.',id:'8',time:'Today, 1:29 pm',color: this.getRandomColor()}
+    ];
+    this.messages = [
+      {
+         senderType: 'user',
+         name: 'Vicky',
+         message: 'Heelllo'
+      },
+      {
+         senderType: 'bot',
+         name: 'Bot',
+         message: 'Hey!, how may i help you!'
+      },
+      {
+          senderType: 'user',
+          name: 'Vicky',
+          message: 'How are you?'
+       },
+       {
+          senderType: 'bot',
+          name: 'Bot',
+          message: 'Am doing good, how about you?'
+       },
+       {
+          senderType: 'user',
+          name: 'Vicky',
+          message: 'What is your company about?'
+       },
+       {
+          senderType: 'bot',
+          name: 'Bot',
+          message: 'Were in the business of making our customers happy'
+       },
+       {
+          senderType: 'user',
+          name: 'Vicky',
+          message: 'What is your company culture?'
+       },
+       {
+          senderType: 'bot',
+          name: 'Bot',
+          message: 'Our culture is to succeed, but have fun while doing it.'
+       },
     ];
   }
 
