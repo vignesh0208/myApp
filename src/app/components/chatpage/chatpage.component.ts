@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular'
 import { ServicesService } from "../../services/services.service";
 
 @Component({
@@ -7,9 +8,12 @@ import { ServicesService } from "../../services/services.service";
   styleUrls: ['./chatpage.component.scss'],
 })
 export class ChatpageComponent implements OnInit {
-
-  constructor(private servicesService: ServicesService) { }
+  public message: any;
+  constructor(public navCtrl: NavController, private servicesService: ServicesService) { }
 
   ngOnInit() {}
 
+  btnVal() {
+    console.log(this.message);
+  }
 }

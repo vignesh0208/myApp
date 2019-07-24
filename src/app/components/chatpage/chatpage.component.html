@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="footer">
-        <textarea id="message1" type="text" class="footer-input" placeholder="Ask me something" wrap="hard"></textarea>
-        <button class="footer-btn" id="submit" onsubmit="submit()"><ion-icon name="send"></ion-icon></button>
+        <textarea [(ngModel)]="message" type="text" class="footer-input" placeholder="Ask me something"></textarea>
+        <button ion-button class="footer-btn" (click)="btnVal()"><ion-icon name="send"></ion-icon></button>
     </div>
 </section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular'
 import { ServicesService } from "../services/services.service";
 
 @Component({
@@ -11,7 +12,7 @@ export class ProfilePage implements OnInit {
   public id: any;
   public dataValue: any;
   public messages: any;
-  constructor(private route: ActivatedRoute, private servicesService: ServicesService) { }
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -21,5 +22,4 @@ export class ProfilePage implements OnInit {
   getValueInfo() {
       this.dataValue = this.servicesService.getIdnumValue(this.id);
   }
-
 }
