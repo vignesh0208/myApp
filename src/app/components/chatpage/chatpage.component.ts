@@ -27,7 +27,6 @@ export class ChatpageComponent implements OnInit {
 
   btnFunction(event) {
     if(event.keyCode == '13' && !event.shiftKey) {
-      console.log("working")
       this.btnVal();
     }
   }
