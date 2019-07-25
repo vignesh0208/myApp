@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular'
 import { ServicesService } from "../../services/services.service";
 
@@ -8,26 +9,32 @@ import { ServicesService } from "../../services/services.service";
   styleUrls: ['./chatpage.component.scss'],
 })
 export class ChatpageComponent implements OnInit {
+  public id: any;
   public message: any;
   public show: any;
-  constructor(public navCtrl: NavController, private servicesService: ServicesService) {
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+  }
 
   btnVal() {
     var fun = this.servicesService.messages;
     var datavalue = {
+      charRoomID: this.id,
       message: this.message.trim(),
       name: "Vicky",
       senderType: "user"
     };
     var loading = {
+      charRoomID: this.id,
       message: "",
       name: "Loading",
       senderType: "bot"
     }
     var dataval = {
+      charRoomID: this.id,
       message: "Hey!, how may i help you!",
       name: "Bot",
       senderType: "bot"

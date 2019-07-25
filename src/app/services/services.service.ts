@@ -26,41 +26,49 @@ export class ServicesService {
    ];
    this.messages = [
       {
+         charRoomID: '1',
          senderType: 'user',
          name: 'Vicky',
          message: 'Heelllo'
       },
       {
+         charRoomID: '1',
          senderType: 'bot',
          name: 'Bot',
          message: 'Hey!, how may i help you!'
       },
-      {
+      {  
+         charRoomID: '1',
          senderType: 'user',
          name: 'Vicky',
          message: 'How are you?'
       },
       {
+         charRoomID: '1',
          senderType: 'bot',
          name: 'Bot',
          message: 'Am doing good, how about you?'
       },
       {
+         charRoomID: '2',
          senderType: 'user',
          name: 'Vicky',
          message: 'What is your company about?'
       },
       {
+         charRoomID: '2',
          senderType: 'bot',
          name: 'Bot',
          message: 'Were in the business of making our customers happy'
       },
       {
+         charRoomID: '2',
          senderType: 'user',
          name: 'Vicky',
          message: 'What is your company culture?'
       },
       {
+         charRoomID: '2',
          senderType: 'bot',
          name: 'Bot',
          message: 'Our culture is to succeed, but have fun while doing it.'
@@ -68,16 +76,15 @@ export class ServicesService {
    ];
 }
 
-  getRandomColor()
-  {
-    var color = Math.floor(0x1000000 * Math.random()).toString(16);
-    return '#' + ('000000' + color).slice(-6);
-  }
+   getRandomColor() {
+      var color = Math.floor(0x1000000 * Math.random()).toString(16);
+      return '#' + ('000000' + color).slice(-6);
+   }
   
-  getIdnumValue(id:number) {
-    return this.dataValue.filter(val => {
-        return val.id === id;
-    })[0]
-  }
+   getIdnumValue(id:number) {
+      return this.dataValue.filter(val => {
+         return val.id === id;
+      })[0]
+   }
   
 }

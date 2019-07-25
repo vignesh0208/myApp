@@ -17,9 +17,10 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.getValueInfo()
-}
-
-  getValueInfo() {
-      this.dataValue = this.servicesService.getIdnumValue(this.id);
   }
+  
+  getValueInfo() {
+    this.dataValue = this.servicesService.getIdnumValue(this.id);
+  }
+
 }

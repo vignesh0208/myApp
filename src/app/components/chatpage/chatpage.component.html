@@ -1,18 +1,22 @@
 <section class="sidenav">
     <div class="body">
-      <div id="app">
-        <div class="chat-area" *ngFor="let msg of servicesService.messages; let l=last;">
-            <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
-            <div *ngIf='msg.senderType == "bot"'>
-                <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
-            </div>
-                <div class="msg">
-                    <ion-spinner *ngIf="show && l" name="dots"></ion-spinner>
-                    <p>{{msg.message}}</p>
-                </div>
+        <div id="app">
+            <div class="chat-area">
+                <ng-container *ngFor="let msg of servicesService.messages; let l=last;">
+                    <ng-container *ngIf="msg.charRoomID == id">
+                        <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
+                            <ng-container *ngIf='msg.senderType == "bot"'>
+                                <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
+                            </ng-container>
+                            <div class="msg">
+                                <ng-container *ngIf="show && l"><ion-spinner name="dots"></ion-spinner></ng-container>
+                                <p>{{msg.message}}</p>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
             </div>
         </div>
-      </div>
     </div>
     <div class="footer">
         <textarea [(ngModel)]="message" type="text" class="footer-input" (keyup.enter)="btnFunction($event)" placeholder="Ask me something"></textarea>
