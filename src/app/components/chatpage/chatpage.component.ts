@@ -22,6 +22,11 @@ export class ChatpageComponent implements OnInit {
       name: "Vicky",
       senderType: "user"
     };
+    var loading = {
+      message: "",
+      name: "Loading",
+      senderType: "bot"
+    }
     var dataval = {
       message: "Hey!, how may i help you!",
       name: "Bot",
@@ -29,10 +34,12 @@ export class ChatpageComponent implements OnInit {
     };
     if(datavalue.message != "") {
       fun.push(datavalue);
-      fun.push(dataval);
+      fun.push(loading);
       this.show = true;
       setTimeout(() => {
         this.show = false;
+        fun.pop();
+        fun.push(dataval);
       }, 3000);
       this.message = "";
     }
