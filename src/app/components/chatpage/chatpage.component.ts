@@ -9,18 +9,31 @@ import { ServicesService } from "../../services/services.service";
 })
 export class ChatpageComponent implements OnInit {
   public message: any;
-  constructor(public navCtrl: NavController, private servicesService: ServicesService) { }
+  public show: any;
+  constructor(public navCtrl: NavController, private servicesService: ServicesService) {
+  }
 
   ngOnInit() {}
 
   btnVal() {
+    var fun = this.servicesService.messages;
     var datavalue = {
       message: this.message.trim(),
       name: "Vicky",
       senderType: "user"
-    }
+    };
+    var dataval = {
+      message: "Hey!, how may i help you!",
+      name: "Bot",
+      senderType: "bot"
+    };
     if(datavalue.message != "") {
-      this.servicesService.messages.push(datavalue);
+      fun.push(datavalue);
+      fun.push(dataval);
+      this.show = true;
+      setTimeout(() => {
+        this.show = false;
+      }, 3000);
       this.message = "";
     }
   }

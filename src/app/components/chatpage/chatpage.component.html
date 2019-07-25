@@ -1,13 +1,14 @@
 <section class="sidenav">
     <div class="body">
       <div id="app">
-        <div class="chat-area" *ngFor="let msg of servicesService.messages">
+        <div class="chat-area" *ngFor="let msg of servicesService.messages; let l=last;">
             <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
             <div *ngIf='msg.senderType == "bot"'>
                 <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
             </div>
                 <div class="msg">
-                    <p>{{msg.message}}</p>
+                    <ion-spinner *ngIf="show && l" name="dots"></ion-spinner>
+                    <p *ngIf="!show">{{msg.message}}</p>
                 </div>
             </div>
         </div>
