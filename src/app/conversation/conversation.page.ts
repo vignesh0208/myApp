@@ -10,7 +10,7 @@ export class ConversationPage implements OnInit {
   constructor(private servicesService: ServicesService) { }
 
   ngOnInit() {
-    // console.log(this.servicesService)
+    
   }
 
 }

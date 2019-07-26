@@ -23,4 +23,9 @@ export class ProfilePage implements OnInit {
     this.dataValue = this.servicesService.getIdnumValue(this.id);
   }
 
+  bot() {
+    console.log("working")
+    var fun = true;
+  }
+
 }
