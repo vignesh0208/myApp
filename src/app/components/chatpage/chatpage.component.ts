@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular'
 import { ServicesService } from "../../services/services.service";
-import { ProfilePageModule } from "../../profile/profile.module"
 
 @Component({
   selector: 'app-chatpage',
@@ -13,7 +12,7 @@ export class ChatpageComponent implements OnInit {
   public id: any;
   public message: any;
   public show: any;
-  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService, private profilePage: ProfilePageModule) { }
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
