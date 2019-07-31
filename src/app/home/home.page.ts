@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { ServicesService } from "../services/services.service";
@@ -11,6 +11,7 @@ declare var google;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  @ViewChild('map') mapRef: ElementRef;
   tableData: any;
   dataReturned: any;
   constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService) {
@@ -33,6 +34,10 @@ export class HomePage {
 
   ngOnInit() {
     this.useAngularLibrary();
+  }
+
+  ionViewDidLoad() {
+    console.log(this.mapRef);
   }
 
   useAngularLibrary() {
