@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular'
 import { ServicesService } from "../services/services.service";
 
+declare var google;
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -14,6 +16,7 @@ export class ProfilePage implements OnInit {
   public messages: any;
   public message: any;
   public show: any;
+  map: any;
   botAgent= false;
   colorList = [
     {name:'bot', active:true},
@@ -56,6 +59,13 @@ export class ProfilePage implements OnInit {
   
   getValueInfo() {
     this.dataValue = this.servicesService.getIdnumValue(this.id);
+  }
+
+  ionViewDidEnter(){
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -34.9011, lng: -56.1645 },
+      zoom: 15
+    });
   }
 
   // bot() {

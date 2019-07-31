@@ -3,18 +3,14 @@ import { NavController, ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { ServicesService } from "../services/services.service";
 
-declare var google;
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  @ViewChild('map') mapRef: ElementRef;
   tableData: any;
   dataReturned: any;
-  map: any;
   constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService) {
     this.tableData = [
       { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
@@ -35,17 +31,6 @@ export class HomePage {
 
   ngOnInit() {
     this.useAngularLibrary();
-  }
-
-  ionViewDidLoad() {
-    console.log(this.mapRef);
-  }
-
-  ionViewDidEnter(){
-    this.map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: -34.9011, lng: -56.1645 },
-      zoom: 15
-    });
   }
 
   useAngularLibrary() {

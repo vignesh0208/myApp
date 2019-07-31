@@ -15,7 +15,6 @@
     </ion-text>
     <ion-buttons class="profile-header" slot="end">
       <ion-icon name="information-circle-outline"></ion-icon>
-      <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -41,6 +40,7 @@
             </div>
         </div>
     </div>
+    <!-- <div id="map"></div> -->
     <ng-container *ngIf="botAgent">
       <div class="footer">
           <textarea [(ngModel)]="message" type="text" class="footer-input" (keyup.enter)="btnFunction($event)" placeholder="Ask me something"></textarea>
