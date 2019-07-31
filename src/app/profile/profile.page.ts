@@ -65,7 +65,7 @@ export class ProfilePage implements OnInit {
   }
 
   ionViewDidEnter() {
-    var latlng = new google.maps.LatLng(39.305, -76.617)
+    var latlng = new google.maps.LatLng(this.dataValue.lat, this.dataValue.lng)
     var mapProp = {
       center: latlng,
       zoom: 15,
@@ -87,12 +87,11 @@ export class ProfilePage implements OnInit {
     marker.setMap(this.map);
     var geocoder = geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-              this.locationAddress = results[1].formatted_address;
-              console.log(this.locationAddress);
-            }
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[1]) {
+          this.locationAddress = results[1].formatted_address;
         }
+      }
     });
   }
 
