@@ -50,7 +50,21 @@
 </ion-content>
 
 <section id="mySidenav" class="detail-sidenav">
-  <h1>LEAD INFO</h1>
-  <h5 (click)="closeNav()">Close</h5>
-  <div id="map"></div>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>LEAD INFO</ion-title>
+      <ion-buttons slot="end" (click)="closeNav()" class="detail-close-btn">
+        <ion-icon name="close"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <div class="details">
+      <p><strong>Name:</strong> {{ dataValue.name }}</p>
+      <p><strong>Email:</strong> {{ dataValue.name }}@gmail.com</p>
+      <p><strong>Channel:</strong> Web</p>
+      <p><strong>Location:</strong> {{locationAddress}}</p>
+    </div>
+    <div id="map"></div>
+  </ion-content>
 </section>

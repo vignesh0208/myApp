@@ -17,12 +17,14 @@
     z-index: 1;
     top: 0;
     right: 0;
-    display:flex;
-    flex-direction:column;
     background-color: #ffffff;
     visibility: hidden;
     transition: 0.1s;
     box-shadow: 0 1px 5px rgba(0,0,0,.2);
+    .detail-close-btn {
+        padding: 0px 20px;
+        font-size: 24px;
+    }
 }
 
 .sidenav {
@@ -79,7 +81,6 @@
 }
 
 .sidenav .body {
-    order: 2;
     overflow-y: scroll;
     display: flex;
     height: 100%;
@@ -261,6 +262,9 @@
     }
     .active {
         background: #4abb42;
+        cursor: none;
+        touch-action: none;
+        pointer-events: none;
     }
     p {
         text-transform: capitalize;
@@ -272,6 +276,6 @@
 }
 
 #map {
-    height: 50%;
+    height: 25%;
     width: 100%;
 }

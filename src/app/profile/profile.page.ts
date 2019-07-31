@@ -17,10 +17,11 @@ export class ProfilePage implements OnInit {
   public message: any;
   public show: any;
   map: any;
+  public locationAddress: any;
   botAgent= false;
   colorList = [
-    {name:'bot', active:true},
-    {name:'agent', active:false},
+    {name:'bot', active:true, disabled:true},
+    {name:'agent', active:false, disabled:false},
   ];
   public color: any;
   constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService) {  }
@@ -33,6 +34,7 @@ export class ProfilePage implements OnInit {
   botAgentval(val) {
     if(val.name == "bot") {
       val.active= true;
+      val.disabled= true;
       this.colorList[1].active= false;
       this.botAgent= false;
       var botActive = {
@@ -44,7 +46,8 @@ export class ProfilePage implements OnInit {
       this.servicesService.messages.push(botActive);
     }
     else {
-      val.active= true
+      val.active= true;
+      val.disabled= true;
       this.colorList[0].active= false;
       this.botAgent= true;
       var agentActive = {
@@ -61,15 +64,20 @@ export class ProfilePage implements OnInit {
     this.dataValue = this.servicesService.getIdnumValue(this.id);
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     var latlng = new google.maps.LatLng(39.305, -76.617)
     var mapProp = {
       center: latlng,
       zoom: 15,
-      mapTypeControl: false,
-      zoomControl: false,
-      streetViewControl: false,
+      panControl:false,
+      zoomControl:false,
+      mapTypeControl:false,
+      scaleControl:false,
+      streetViewControl:false,
+      overviewMapControl:false,
+      rotateControl:false,
       draggable: false,
+      fullscreenControl: false,
       mapTypeId:google.maps.MapTypeId.ROADMAP
     }
     this.map = new google.maps.Map(document.getElementById('map'), mapProp);
@@ -77,6 +85,15 @@ export class ProfilePage implements OnInit {
       position:latlng,
     });
     marker.setMap(this.map);
+    var geocoder = geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+              this.locationAddress = results[1].formatted_address;
+              console.log(this.locationAddress);
+            }
+        }
+    });
   }
 
   openNav() {
