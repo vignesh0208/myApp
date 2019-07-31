@@ -52,11 +52,8 @@ export class HomePage {
             fontSize: 18,
             bold: true,
             italic: true,
-            // The color of the text.
             color: '#871b47',
-            // The color of the text outline.
             auraColor: '#d799ae',
-            // The transparency of the text.
             opacity: 0.8
           }
         }

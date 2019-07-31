@@ -62,33 +62,37 @@ export class ProfilePage implements OnInit {
   }
 
   ionViewDidEnter(){
-    this.map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: -34.9011, lng: -56.1645 },
-      zoom: 15
+    var latlng = new google.maps.LatLng(39.305, -76.617)
+    var mapProp = {
+      center: latlng,
+      zoom: 15,
+      mapTypeControl: false,
+      zoomControl: false,
+      streetViewControl: false,
+      draggable: false,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    }
+    this.map = new google.maps.Map(document.getElementById('map'), mapProp);
+    var marker = new google.maps.Marker({
+      position:latlng,
     });
+    marker.setMap(this.map);
   }
 
-  // bot() {
-  //   this.botAgent= false;
-  //   var botActive = {
-  //     charRoomID: this.id,
-  //     message: "Switched back to Bot",
-  //     name: "botAgent",
-  //     senderType: "bot-agent"
-  //   };
-  //   this.servicesService.messages.push(botActive);
-  // }
-
-  // agent() {
-  //   this.botAgent= true;
-  //   var agentActive = {
-  //     charRoomID: this.id,
-  //     message: "Switched on to Live Agent",
-  //     name: "botAgent",
-  //     senderType: "bot-agent"
-  //   };
-  //   this.servicesService.messages.push(agentActive);
-  // }
+  openNav() {
+    document.getElementById("mySidenav").style.width = "80%";
+    document.getElementById("mySidenav").style.visibility = "visible"
+    document.getElementById("addIndex").style.zIndex = "1";
+    document.getElementById("addIndex").style.opacity = "0.4";
+    document.getElementById("addIndex-1").style.opacity = "0.4";
+  }
+  closeNav() {
+    document.getElementById("mySidenav").style.width = "0%";
+    document.getElementById("mySidenav").style.visibility = "hidden"
+    document.getElementById("addIndex").style.zIndex = "inherit";
+    document.getElementById("addIndex").style.opacity = "1";
+    document.getElementById("addIndex-1").style.opacity = "1";
+  }
 
   btnVal() {
     var fun = this.servicesService.messages;

@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header id="addIndex">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -13,13 +13,13 @@
         </ng-container>
       </div>
     </ion-text>
-    <ion-buttons class="profile-header" slot="end">
+    <ion-buttons class="profile-header button-view" slot="end" (click)="openNav()">
       <ion-icon name="information-circle-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="addIndex-1">
   <section class="sidenav">
     <div class="body">
         <div id="app">
@@ -40,7 +40,6 @@
             </div>
         </div>
     </div>
-    <!-- <div id="map"></div> -->
     <ng-container *ngIf="botAgent">
       <div class="footer">
           <textarea [(ngModel)]="message" type="text" class="footer-input" (keyup.enter)="btnFunction($event)" placeholder="Ask me something"></textarea>
@@ -49,3 +48,9 @@
     </ng-container>
   </section>
 </ion-content>
+
+<section id="mySidenav" class="detail-sidenav">
+  <h1>LEAD INFO</h1>
+  <h5 (click)="closeNav()">Close</h5>
+  <div id="map"></div>
+</section>
