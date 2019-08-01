@@ -105,6 +105,8 @@ export class ProfilePage implements OnInit {
     document.getElementById("addIndex").style.zIndex = "1";
     document.getElementById("addIndex").style.opacity = "0.4";
     document.getElementById("addIndex-1").style.opacity = "0.4";
+    document.getElementById("addFooter").style.zIndex = "1";
+    document.getElementById("addFooter").style.opacity = "0.4";
   }
   closeNav() {
     document.getElementById("mySidenav").style.width = "0%";
@@ -112,6 +114,8 @@ export class ProfilePage implements OnInit {
     document.getElementById("addIndex").style.zIndex = "inherit";
     document.getElementById("addIndex").style.opacity = "1";
     document.getElementById("addIndex-1").style.opacity = "1";
+    document.getElementById("addFooter").style.zIndex = "inherit";
+    document.getElementById("addFooter").style.opacity = "1";
   }
 
   btnVal() {

@@ -25,6 +25,7 @@
     </ion-text>
     <ion-buttons class="profile-header button-view" slot="end" (click)="openNav()">
       <ion-icon name="information-circle-outline"></ion-icon>
+      <!-- <img src="assets/image/icon/user-info-1.svg"> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -41,7 +42,8 @@
                                 <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
                             </ng-container>
                             <ng-container *ngIf='msg.senderType == "user"'>
-                                <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
+                                <!-- <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4> -->
+                                <h4><img src="assets/image/chat-icon/a{{ msg.charRoomID }}.png" height="25" width="25"></h4>
                             </ng-container>
                             <div class="msg">
                                 <ng-container *ngIf="show && l"><ion-spinner name="dots"></ion-spinner></ng-container>
@@ -53,14 +55,17 @@
             </div>
         </div>
     </div>
-    <ng-container *ngIf="botAgent">
-      <div class="footer">
-          <textarea [(ngModel)]="message" type="text" class="footer-input" (keyup.enter)="btnFunction($event)" placeholder="Ask me something"></textarea>
-          <button ion-button class="footer-btn" (click)="btnVal()"><ion-icon name="send"></ion-icon></button>
-      </div>
-    </ng-container>
   </section>
 </ion-content>
+
+<ion-footer id="addFooter">
+  <ng-container *ngIf="botAgent">
+    <div class="footer">
+        <textarea [(ngModel)]="message" type="text" class="footer-input" (keyup.enter)="btnFunction($event)" placeholder="Ask me something"></textarea>
+        <button ion-button class="footer-btn" (click)="btnVal()"><ion-icon name="send"></ion-icon></button>
+    </div>
+  </ng-container>
+</ion-footer>
 
 <section id="mySidenav" class="detail-sidenav">
   <ion-header>

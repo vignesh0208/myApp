@@ -1,6 +1,10 @@
 .profile-header {
     margin: 0px;
     padding: 0px 12px;
+    img {
+        width: 16%;
+        height: 100%;
+    }
     .hydrated {
         font-size: 24px;
     }
@@ -232,7 +236,7 @@
     border-radius: 100%;
 }
 
-.sidenav .footer {
+.footer {
     order: 3;
     bottom: 0px;
     padding: 8px;
@@ -240,55 +244,51 @@
     width: 100%;
     border-top: 1px solid #e8e8eb;
     background: #ffffff;
-}
-
-.sidenav .footer .footer-input {
-    --padding-top: 0px;
-    --padding-end: 0;
-    --padding-bottom: 0px;
-    --padding-start: 0px;
-    margin: 0;
-    box-sizing: border-box;
-    height: 35px;
-    resize: none;
-    width: 88%;
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 6px;
-    overflow: hidden;
-    outline: none;
-    background-color: #e8e8eb;
-    border: 0;
-    transition: background-color .2s ease;
-    vertical-align: top;
-}
-
-.sidenav .footer .footer-btn {
-    line-height: 32px;
-    border-radius: 100%;
-    transition: opacity .2s ease;
-    border: 0;
-    font-weight: 500;
-    font-size: 24px;
-    cursor: pointer;
-    outline: none;
-    transition: opacity .2s ease;
-    background-color: #fff;
-    color: #969ae3;
-}
-
-.sidenav .footer p {
-    font-size: 12px;
-    color: #6c6c6f;
-    margin: 4px 0px;
-    text-align: center;
-}
-
-.sidenav .footer p a {
-    font-size: 12px;
-    color: #6c6c6f;
-    text-decoration: underline;
-    display: inline;
+    .footer-input {
+        --padding-top: 0px;
+        --padding-end: 0;
+        --padding-bottom: 0px;
+        --padding-start: 0px;
+        margin: 0;
+        box-sizing: border-box;
+        height: 35px;
+        resize: none;
+        width: 88%;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 6px;
+        overflow: hidden;
+        outline: none;
+        background-color: #e8e8eb;
+        border: 0;
+        transition: background-color .2s ease;
+        vertical-align: top;
+    }
+    .footer-btn {
+        line-height: 32px;
+        border-radius: 100%;
+        transition: opacity .2s ease;
+        border: 0;
+        font-weight: 500;
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+        transition: opacity .2s ease;
+        background-color: #fff;
+        color: #969ae3;
+    }
+    p {
+        font-size: 12px;
+        color: #6c6c6f;
+        margin: 4px 0px;
+        text-align: center;
+        a {
+            font-size: 12px;
+            color: #6c6c6f;
+            text-decoration: underline;
+            display: inline;
+        }
+    }
 }
 
 .chatArea-header {
