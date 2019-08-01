@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavController } from '@ionic/angular'
 import { ServicesService } from "../services/services.service";
 
@@ -24,7 +24,11 @@ export class ProfilePage implements OnInit {
     {name:'agent', active:false, disabled:false},
   ];
   public color: any;
-  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService) {  }
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService, private router: Router) {  }
+
+  conversationPage() {
+    this.router.navigateByUrl('/conversation');
+  }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');

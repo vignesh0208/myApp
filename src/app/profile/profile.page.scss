@@ -6,6 +6,36 @@
     }
 }
 
+.profile-page {
+    .image {
+        border-radius: 50%;
+        span {
+            height: 40px;
+            width: 40px;
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            line-height: 3;
+
+        }
+    }
+    .profile-title {
+        h4 {
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #6a7c8b;
+            text-transform: lowercase;
+        }
+    }
+}
+
 .button-view {
     cursor: pointer;
     visibility: visible;
@@ -107,11 +137,12 @@
     letter-spacing: 0.5px;
     max-width: 256px;
     min-height: 35px;
-    margin: 1px 0;
-    border-radius: 12px;
+    margin: 8px 0 0;
+    border: 1px solid #89cec8;
+    border-radius: 0px 12px 12px;
     box-sizing: border-box;
-    background-color: #e8e8eb;
-    padding: 7px 12px;
+    background-color: #b5e0dc;
+    padding: 7px 14px;
     display: inline-block;
     vertical-align: top;
     text-align: left;
@@ -130,13 +161,14 @@
     letter-spacing: 0.5px;
     background-color: rgba(196, 202, 226, 1);
     color: white;
+    border: 0px solid #89cec8;
     max-width: 256px;
     min-height: 35px;
     font-size: 14px;
     margin: 1px 0;
     border-radius: 12px;
     box-sizing: border-box;
-    padding: 7px 12px;
+    padding: 7px 14px;
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -148,32 +180,42 @@
 .sidenav .chat-area .msg p, .sidenav .chat-area .user-msg p, .sidenav .bot-agent-msg .msg p {
     margin-bottom: 0px;
     margin-top: 0px;
+    font-size: 14px;
     font-weight: 400;
     white-space: pre-wrap;
 }
 
-.sidenav .chat-area h4 {
+.sidenav .chat-area .bot-msg h4 {
     margin-top: 4px;
     margin-right: 4px;
     margin-bottom: 0px; 
 }
 
 .sidenav .chat-area .user-msg {
+    display: flex;
+    flex-direction: row-reverse;
     padding: 8px 8px 18px;
     position: relative;
     text-align: right;
 }
 
+.sidenav .chat-area .user-msg h4 {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 0px; 
+}
+
 .sidenav .user-msg .msg {
     letter-spacing: 0.5px;
-    background-color: rgba(0, 83, 207, 0.397);
-    color: white;
+    background-color: #ffffff;
+    border: 1px solid #d6dbde;
+    color: #000000;
     max-width: 256px;
     min-height: 35px;
-    margin: 1px 0;
-    border-radius: 12px;
+    margin: 8px 0 0;
+    border-radius: 12px 0px 12px 12px;
     box-sizing: border-box;
-    padding: 7px 12px;
+    padding: 7px 14px;
     display: inline-block;
     vertical-align: top;
     text-align: left;
@@ -262,6 +304,7 @@
     }
     .active {
         background: #4abb42;
+        color: #ffffff;
         cursor: none;
         touch-action: none;
         pointer-events: none;

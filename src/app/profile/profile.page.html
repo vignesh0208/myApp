@@ -1,9 +1,19 @@
-<ion-header id="addIndex">
+<ion-header id="addIndex" class="profile-page">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+    <ion-buttons slot="start" (click)="conversationPage()">
+      <ion-item lines="none">
+        <ion-icon name="arrow-round-back" style="padding-right: 8px;"></ion-icon>
+        <ion-avatar lines="none">
+          <div class="image" [ngStyle]="{'backgroundColor': dataValue.color}">
+            <span class="ion-text-uppercase">{{ dataValue.name | slice:0:1 }}</span>
+          </div>
+        </ion-avatar>
+      </ion-item>
     </ion-buttons>
-    <ion-title>{{ dataValue.name }}</ion-title>
+    <ion-title class="ion-no-padding profile-title">
+      <h4 class="ion-text-capitalize">{{ dataValue.name }}</h4>
+      <span>Last seen: {{ dataValue.time }}</span>
+    </ion-title>
     <ion-text slot="end">
       <div class="chatArea-header">
         <ng-container *ngFor="let c of colorList">
@@ -19,7 +29,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="addIndex-1">
+<ion-content id="addIndex-1" style="--background:#f0f0f0">
   <section class="sidenav">
     <div class="body">
         <div id="app">
@@ -28,6 +38,9 @@
                     <ng-container *ngIf="msg.charRoomID == id">
                         <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
                             <ng-container *ngIf='msg.senderType == "bot"'>
+                                <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
+                            </ng-container>
+                            <ng-container *ngIf='msg.senderType == "user"'>
                                 <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
                             </ng-container>
                             <div class="msg">
