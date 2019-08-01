@@ -10,12 +10,12 @@
 <ion-content class="conversation">
   <div *ngFor="let service of servicesService.dataValue">
     <ion-item lines="full" [routerLink]="'/profile/' + service.id" routerDirection="forward">
-      <ion-thumbnail slot="start">
+      <ion-avatar slot="start" class="ion-margin-end">
         <div class="image" [ngStyle]="{'backgroundColor': service.color}">
           <span class="ion-text-uppercase">{{ service.name | slice:0:1 }}</span>
         </div>
-      </ion-thumbnail>
-      <ion-label>
+      </ion-avatar>
+      <ion-label class="ion-margin-top ion-margin-bottom">
         <div class="text-wrapper">
           <h4 class="ion-text-capitalize">{{ service.name }}</h4>
           <span>{{ service.time }}</span>
