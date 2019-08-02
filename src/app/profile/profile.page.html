@@ -77,12 +77,43 @@
     </ion-toolbar>
   </ion-header>
   <ion-content padding>
-    <div class="details">
-      <p><strong>Name:</strong> {{ dataValue.name }}</p>
-      <p><strong>Email:</strong> {{ dataValue.name }}@gmail.com</p>
-      <p><strong>Channel:</strong> Web</p>
-      <p><strong>Location:</strong> {{locationAddress}}</p>
-    </div>
+    <section class="lead-info">
+      <div class="details">
+        <div class="heading">
+          <img slot="start" src="assets/image/icon/user-info.svg" height="24" width="24">
+          <div class="heading-text">
+            <h4>CUSTOMER DETAILS</h4>
+            <h4>MORE</h4>
+          </div>
+        </div>
+        <div class="table">
+          <div class="tr">
+            <div class="td">
+              <strong>Name</strong>
+            </div>
+            <div class="td">
+              {{ dataValue.name }}
+            </div>
+          </div>
+          <div class="tr">
+            <div class="td">
+              <strong>Channel</strong>
+            </div>
+            <div class="td">
+              Web
+            </div>
+          </div>
+          <div class="tr">
+            <div class="td">
+              <strong>Location</strong>
+            </div>
+            <div class="td">
+              {{locationAddress}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div id="map"></div>
   </ion-content>
 </section>
