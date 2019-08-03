@@ -28,50 +28,58 @@ export class ServicesService {
       {
          charRoomID: '1',
          senderType: 'user',
-         name: 'Vicky',
-         message: 'Heelllo'
+         name: 'rob',
+         message: 'Heelllo',
+         dateTime: '02/08/2019'
       },
       {
          charRoomID: '1',
          senderType: 'bot',
          name: 'Bot',
-         message: 'Hey!, how may i help you!'
+         message: 'Hey!, how may i help you!',
+         dateTime: '02/08/2019'
       },
       {  
          charRoomID: '1',
          senderType: 'user',
-         name: 'Vicky',
-         message: 'How are you?'
+         name: 'rob',
+         message: 'How are you?',
+         dateTime: '02/08/2019'
       },
       {
          charRoomID: '1',
          senderType: 'bot',
          name: 'Bot',
-         message: 'Am doing good, how about you?'
+         message: 'Am doing good, how about you?',
+         dateTime: '02/08/2019'
       },
       {
          charRoomID: '2',
          senderType: 'user',
-         name: 'Vicky',
-         message: 'What is your company about?'
+         name: 'sansa',
+         message: 'What is your company about?',
+         dateTime: '02/08/2019'
       },
       {
          charRoomID: '2',
          senderType: 'bot',
          name: 'Bot',
-         message: 'Were in the business of making our customers happy'
+         message: 'Were in the business of making our customers happy',
+         dateTime: '02/08/2019'
       },
       {
          charRoomID: '2',
          senderType: 'user',
-         name: 'Vicky',
-         message: 'What is your company culture?'
+         name: 'sansa',
+         message: 'What is your company culture?',
+         dateTime: '02/08/2019'
       },
       {
          charRoomID: '2',
          senderType: 'bot',
          name: 'Bot',
-         message: 'Our culture is to succeed, but have fun while doing it.'
+         message: 'Our culture is to succeed, but have fun while doing it.',
+         dateTime: '02/08/2019'
       },
    ];
 }

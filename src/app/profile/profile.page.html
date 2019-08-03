@@ -39,15 +39,21 @@
                     <ng-container *ngIf="msg.charRoomID == id">
                         <div class="{{ msg.senderType }}-msg" style="margin-left:0px;">
                             <ng-container *ngIf='msg.senderType == "bot"'>
-                                <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4>
+                                <!-- <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4> -->
+                                <h4><img class="fa-archway" src="assets/image/chat-icon/user_placeholder.jpg" height="25" width="25"></h4>
                             </ng-container>
                             <ng-container *ngIf='msg.senderType == "user"'>
                                 <!-- <h4><ion-icon class="fa-archway" name="jet"></ion-icon></h4> -->
                                 <h4><img src="assets/image/chat-icon/a{{ msg.charRoomID }}.png" height="25" width="25"></h4>
                             </ng-container>
-                            <div class="msg">
-                                <ng-container *ngIf="show && l"><ion-spinner name="dots"></ion-spinner></ng-container>
-                                <p>{{msg.message}}</p>
+                            <div class="chat-area-msg">
+                              <div class="msg">
+                                  <ng-container *ngIf="show && l"><ion-spinner name="dots"></ion-spinner></ng-container>
+                                  <p>{{msg.message}}</p>
+                              </div>
+                              <ng-container *ngIf='msg.name != "botAgent"'>
+                                <div class="msg-info">{{ msg.name }} {{ msg.dateTime }}</div>
+                              </ng-container>
                             </div>
                         </div>
                     </ng-container>
@@ -110,6 +116,17 @@
             <div class="td">
               {{locationAddress}}
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="lead-info" style="border-bottom: 0px;">
+      <div class="details">
+        <div class="heading">
+          <img slot="start" src="assets/image/icon/Location.svg" height="24" width="24">
+          <div class="heading-text">
+            <h4>GEO INFORMATION</h4>
+            <h4>MORE</h4>
           </div>
         </div>
       </div>

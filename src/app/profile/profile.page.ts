@@ -123,8 +123,9 @@ export class ProfilePage implements OnInit {
     var datavalue = {
       charRoomID: this.id,
       message: this.message.trim(),
-      name: "Vicky",
-      senderType: "user"
+      name: this.dataValue.name,
+      senderType: "user",
+      dateTime: new Date("DD/MM/YYYY")
     };
     var loading = {
       charRoomID: this.id,
@@ -136,7 +137,8 @@ export class ProfilePage implements OnInit {
       charRoomID: this.id,
       message: "Hey!, how may i help you!",
       name: "Bot",
-      senderType: "bot"
+      senderType: "bot",
+      dateTime: new Date("DD/MM/YYYY")
     };
     if(datavalue.message != "") {
       fun.push(datavalue);
