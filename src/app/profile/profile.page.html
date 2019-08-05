@@ -86,7 +86,7 @@
     <section class="lead-info">
       <div class="details">
         <div class="heading">
-          <img slot="start" src="assets/image/icon/user-info.svg" height="24" width="24">
+          <img slot="start" src="assets/image/icon/user-info.svg" height="16" width="16">
           <div class="heading-text">
             <h4>CUSTOMER DETAILS</h4>
             <h4>MORE</h4>
@@ -123,7 +123,7 @@
     <section class="lead-info" style="border-bottom: 0px;">
       <div class="details">
         <div class="heading">
-          <img slot="start" src="assets/image/icon/Location.svg" height="24" width="24">
+          <img slot="start" src="assets/image/icon/Location.svg" height="16" width="16">
           <div class="heading-text">
             <h4>GEO INFORMATION</h4>
             <h4>MORE</h4>
@@ -132,5 +132,60 @@
       </div>
     </section>
     <div id="map"></div>
+    <section class="block-info">
+      <div class="details">
+        <div class="heading">
+          <img slot="start" src="assets/image/icon/block-lead.svg" height="16" width="16">
+          <div class="heading-text">
+            <h4>BLOCK INFORMATIONS</h4>
+            <h4>MORE</h4>
+          </div>
+        </div>
+        <div class="block-details">
+          <div class="tr">
+            <div class="td">
+              <strong>Name</strong>
+            </div>
+            <div class="td">
+              {{ dataValue.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="lead-info">
+      <div class="details">
+        <div class="heading-normal">
+          <img slot="start" src="assets/image/icon/tickets.svg" height="16" width="16">
+          <div class="heading-text">
+            <h4>TICKETS</h4>
+          </div>
+        </div>
+      </div>
+      <div class="tickets-details">
+        <div class="tickets-info">
+          <div class="tickets"><span class="color-info"> </span> <span>#54: Am doing good, how about you?</span></div>
+          <p class="date">02/08/1994</p>
+        </div>
+        <div class="tickets-info">
+          <div class="tickets"><span class="color-info"> </span> <span>#54: Am doing good, how about you?</span></div>
+          <p class="date">02/08/1994</p>
+        </div>
+        <div class="information">
+          <div class="color-detail">
+            <span class="color-detail-info-1"> </span>
+            Resolved
+          </div>
+          <div class="color-detail">
+            <span class="color-detail-info-2"> </span>
+            Over due
+          </div>
+          <div class="color-detail">
+            <span class="color-detail-info-3"> </span>
+            Open
+          </div>
+        </div>
+      </div>
+    </section>
   </ion-content>
 </section>
