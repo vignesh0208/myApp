@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ModalPageModule } from './modal/modal.module';
 import { IonicRatingModule } from 'ionic4-rating';
 
-import { Firebase } from '@ionic-native/firebase';
+import { Firebase } from '@ionic-native/firebase/ngx';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -27,7 +27,7 @@ const firebase = {
   appId: "1:666620014031:web:abc0c1019bde6175"
  }
 
- import { FcmService } from './provider/fcm.service';
+import { FcmService } from './provider/fcm.service';
 
 @NgModule({
   declarations: [AppComponent],
