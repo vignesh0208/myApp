@@ -7,6 +7,7 @@ export class ServicesService {
   public dataValue: any;
   public cardValue: any;
   public messages: any;
+  public tickets: any;
   constructor() {
    this.cardValue = [
       {name: 'No. of Visitors', size: 'size-sm', value: [ { val1:'0', val2:'Today' }, { val1:'15', val2:'Total' } ]},
@@ -78,6 +79,72 @@ export class ServicesService {
          charRoomID: '2',
          senderType: 'bot',
          name: 'Bot',
+         message: 'Our culture is to succeed, but have fun while doing it.',
+         dateTime: '02/08/2019'
+      },
+   ];
+   this.tickets = [
+      {
+         charRoomID: '1',
+         ticketID: '1',
+         priority: 'high',
+         type: 'resolved',
+         message: 'Heelllo',
+         dateTime: '02/08/2019'
+      },
+      {
+         charRoomID: '1',
+         ticketID: '2',
+         priority: 'low',
+         type: 'over-due',
+         message: 'Hey!, how may i help you!',
+         dateTime: '02/08/2019'
+      },
+      {  
+         charRoomID: '1',
+         ticketID: '3',
+         priority: 'medium',
+         type: 'open',
+         message: 'How are you?',
+         dateTime: '02/08/2019'
+      },
+      {
+         charRoomID: '2',
+         ticketID: '4',
+         priority: 'medium',
+         type: 'open',
+         message: 'Am doing good, how about you?',
+         dateTime: '02/08/2019'
+      },
+      {
+         charRoomID: '3',
+         ticketID: '5',
+         priority: 'medium',
+         type: 'open',
+         message: 'What is your company about?',
+         dateTime: '02/08/2019'
+      },
+      {
+         charRoomID: '4',
+         ticketID: '6',
+         priority: 'medium',
+         type: 'open',
+         message: 'Were in the business of making our customers happy',
+         dateTime: '02/08/2019'
+      },
+      {
+         charRoomID: '7',
+         ticketID: '7',
+         priority: 'medium',
+         type: 'open',
+         message: 'What is your company culture?',
+         dateTime: '02/08/2019'
+      },
+      {
+         charRoomID: '8',
+         ticketID: '8',
+         priority: 'medium',
+         type: 'open',
          message: 'Our culture is to succeed, but have fun while doing it.',
          dateTime: '02/08/2019'
       },

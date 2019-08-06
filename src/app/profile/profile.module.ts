@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { IonicRatingModule } from "ionic4-rating";
 
 import { IonicModule } from '@ionic/angular';
 
@@ -21,8 +22,10 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ComponentsModule,
+    IonicRatingModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ProfilePage]
+  declarations: [ProfilePage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProfilePageModule {}

@@ -10,6 +10,16 @@
     }
 }
 
+.rating {
+    ion-icon {
+        color: gray;
+    
+        &.filled {
+            color: #ffb400;
+        }
+    }
+}
+
 .profile-page {
     .image {
         border-radius: 50%;
@@ -46,11 +56,11 @@
 }
 
 .detail-sidenav {
-    height: 100%;
     position: absolute;
     z-index: 1;
     top: 0;
     right: 0;
+    bottom: 0;
     background-color: #ffffff;
     visibility: hidden;
     transition: 0.1s;
@@ -72,8 +82,34 @@
             padding-left: 24px;
         }
     }
+    .star-rating {
+        padding-bottom: 8px;
+        padding-left: 24px;
+        .para-color {
+            font-size: 14px;
+            color: #6a7c8b;
+            font-weight: 400;
+        }
+        .para-color-1 {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 500;
+            margin-bottom: 0px;
+        }
+    }
     .details {
         margin: 8px 0px;
+    }
+    .table {
+        display: table;
+        width: 75%;
+        padding-left: 24px;
+    }
+    .table-full {
+        display: table;
+        width: 100%;
+        padding-left: 24px;
+        padding-bottom: 8px; 
     }
     .tr {
         display: table-row;
@@ -125,36 +161,65 @@
         .information {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
             color: #818181;
-            .color-detail-info-1 {
-                height: 10px;
-                width: 10px;
-                background-color: #000000;
-                border-radius: 50%;
-            }
-            .color-detail-info-2 {
-                height: 10px;
-                width: 10px;
-                background-color: #0d5cc7;
-                border-radius: 50%;
-            }
-            .color-detail-info-3 {
-                height: 10px;
-                width: 10px;
-                background-color: #4abb42;
-                border-radius: 50%;
+            margin-bottom: 8px;
+            .color-detail-info {
+                font-weight: 400;
+                font-size: 14px;
+                .color-detail-text {
+                    margin-left: 16px;
+                }
+                .color-detail-info-1 {
+                    position: absolute;
+                    margin-right: 4px;
+                    margin-top: 3px;
+                    height: 10px;
+                    width: 10px;
+                    background-color: #e2e3e5;
+                    border-radius: 50%;
+                }
+                .color-detail-info-2 {
+                    position: absolute;
+                    margin-right: 4px;
+                    margin-top: 3px;
+                    height: 10px;
+                    width: 10px;
+                    background-color: #f8d7da;
+                    border-radius: 50%;
+                }
+                .color-detail-info-3 {
+                    position: absolute;
+                    margin-right: 4px;
+                    margin-top: 3px;
+                    height: 10px;
+                    width: 10px;
+                    background-color: #d4edda;
+                    border-radius: 50%;
+                }
             }
         }
+        .resolved {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+        .over-due {
+            background-color: #f8d7da;
+            color: #711c24;
+        }
+        .open {
+            background-color: #d4edda;
+            color: #383d41;
+        }
         .tickets-info {
-            background-color: #4abb42;
             border-radius: 4px;
             margin-bottom: 8px;
             padding: 8px;
+            font-weight: 500;
             .date {
                 text-align: right;
                 margin: 0px;
-                font-size: 14px;
+                font-size: 13px;
+                margin-top: 4px;
             }
             .tickets {
                 font-size: 14px;
@@ -164,8 +229,16 @@
                     height: 10px;
                     width: 10px;
                     margin: 3px;
-                    background-color: #f0f0f0;
-                    border: 1px solid #000000;
+                    border: 1px solid #ffffff;
+                }
+                .high {
+                    background-color: #ed4946;
+                }
+                .low {
+                    background-color: #9fd769;
+                }
+                .medium {
+                    background-color: #fad049;
                 }
             }
             
@@ -174,12 +247,7 @@
 }
 
 .lead-info {
-    border-bottom: 1px solid #818181;
-    .table {
-        display: table;
-        width: 75%;
-        padding-left: 24px;
-    }
+    border-bottom: 1px solid #818181; 
 }
 
 .sidenav {
@@ -436,4 +504,10 @@
     height: 25%;
     width: 88%;
     margin-bottom: 8px;
+}
+
+.active-model {
+    cursor: none;
+    touch-action: none;
+    pointer-events: none;
 }
