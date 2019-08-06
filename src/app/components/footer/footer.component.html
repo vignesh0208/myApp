@@ -1,4 +1,4 @@
-<ion-footer class="footer">
+<!-- <ion-footer class="footer">
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col size="3" class="ion-no-padding">
@@ -27,4 +27,28 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-footer>
+</ion-footer> -->
+
+<ion-tabs class="footer" style="position: inherit; contain: unset;">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="homePage()">
+      <img src="assets/image/icon/dashboard.svg">
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="conversationPage()">
+      <img src="assets/image/icon/message-notification.svg">
+      <ion-label>Chats</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="homePage()">
+      <img src="assets/image/icon/contact.svg">
+      <ion-label>Leads</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="homePage()">
+      <img src="assets/image/icon/add-user.svg">
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
