@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, ModalController, ToastController } from '@ionic/angular';
+import { NavController, ModalController, ToastController, AlertController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { ServicesService } from "../services/services.service";
 
@@ -14,7 +14,8 @@ import { tap } from 'rxjs/operators';
 export class HomePage {
   tableData: any;
   dataReturned: any;
-  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public fcm: FcmService, public toastCtrl: ToastController) {
+  toast: any;
+  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public fcm: FcmService, public toastCtrl: ToastController, public alertCtrl: AlertController) {
     this.tableData = [
       { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
       { 'keywordsUsed': 'more', 'total': '7', 'usage': '26.92' },
@@ -40,11 +41,11 @@ export class HomePage {
     this.fcm.getToken()
     this.fcm.listenToNotifications().pipe(
       tap(msg => {
-        var toast = this.toastCtrl.create({
+        this.toast = this.toastCtrl.create({
           message: msg.body,
           duration: 3000
         });
-        toast.present();
+        this.toast.present();
       })
     )
     .subscribe()
