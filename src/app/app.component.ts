@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { FCM } from '@ionic-native/fcm/ngx';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +16,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private fcm: FCM,
+    private router: Router
   ) {
     this.initializeApp();
   }

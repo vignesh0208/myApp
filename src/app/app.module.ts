@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ModalPageModule } from './modal/modal.module';
 import { IonicRatingModule } from 'ionic4-rating';
 
+import { FCM } from '@ionic-native/fcm/ngx';
 import { Firebase } from '@ionic-native/firebase/ngx';
 
 import { AngularFireModule } from 'angularfire2';
@@ -36,6 +37,7 @@ import { FcmService } from './provider/fcm.service';
   providers: [
     StatusBar,
     SplashScreen,
+    FCM,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Firebase,
     FcmService
