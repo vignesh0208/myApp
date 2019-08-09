@@ -13,4 +13,11 @@ export class ConversationPage implements OnInit {
     
   }
 
+  removeItem(item){
+    for(var i = 0; i < this.servicesService.dataValue.length; i++) {
+      if(this.servicesService.dataValue[i] == item){
+        this.servicesService.dataValue.splice(i, 1);
+      }
+    }
+  }
 }
