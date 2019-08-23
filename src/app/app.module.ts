@@ -19,13 +19,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 const firebase = {
-  apiKey: "AIzaSyCS8wBJue6GWpWisN-9dhvt1xqW_Eb3ByE",
+  apiKey: "AIzaSyD64aQ5uvIiG6EV8M0qxYkOEOvmNMaSC5E",
   authDomain: "ionic0208.firebaseapp.com",
-  databaseURL: "https://ionic0208.firebaseio.com",
-  projectId: "ionic0208",
-  storageBucket: "ionic0208.appspot.com",
-  messagingSenderId: "666620014031",
-  appId: "1:666620014031:web:abc0c1019bde6175"
+  databaseURL: "https://banded-water-250305.firebaseio.com/",
+  projectId: "banded-water-250305",
+  storageBucket: "banded-water-250305.appspot.com",
+  // messagingSenderId: "666620014031",
+  appId: "1:672793430980:android:764d2cb7da3280eb"
  }
 
 import { FcmService } from './provider/fcm.service';

@@ -7,7 +7,7 @@ import { ServicesService } from "../services/services.service";
   styleUrls: ['./conversation.page.scss'],
 })
 export class ConversationPage implements OnInit {
-  constructor(private servicesService: ServicesService) { }
+  constructor(public servicesService: ServicesService) { }
 
   ngOnInit() {
     

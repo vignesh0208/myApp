@@ -8,7 +8,7 @@ import { ServicesService } from "../../services/services.service";
 })
 export class CardsComponent implements OnInit {
 
-  constructor(private servicesService: ServicesService) { }
+  constructor(public servicesService: ServicesService) { }
 
   ngOnInit() {}
 

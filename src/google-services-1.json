@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "672793430980",
+    "firebase_url": "https://banded-water-250305.firebaseio.com",
+    "project_id": "banded-water-250305",
+    "storage_bucket": "banded-water-250305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672793430980:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672793430980-veb7pqhesk765e9fh3ap3kqdn4ilbitt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD64aQ5uvIiG6EV8M0qxYkOEOvmNMaSC5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672793430980-veb7pqhesk765e9fh3ap3kqdn4ilbitt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

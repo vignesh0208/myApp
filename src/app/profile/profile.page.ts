@@ -24,7 +24,7 @@ export class ProfilePage implements OnInit {
     {name:'agent', active:false, disabled:false},
   ];
   public color: any;
-  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService, private router: Router) {  }
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, public servicesService: ServicesService, private router: Router) {  }
 
   conversationPage() {
     this.router.navigateByUrl('/conversation');

@@ -12,7 +12,7 @@ export class ChatpageComponent implements OnInit {
   public id: any;
   public message: any;
   public show: any;
-  constructor(public navCtrl: NavController, private route: ActivatedRoute, private servicesService: ServicesService) { }
+  constructor(public navCtrl: NavController, public route: ActivatedRoute, public servicesService: ServicesService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
