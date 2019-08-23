@@ -2,8 +2,6 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, ModalController, ToastController, AlertController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { ServicesService } from "../services/services.service";
-
-import { FcmService } from '../provider/fcm.service';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -15,7 +13,7 @@ export class HomePage {
   tableData: any;
   dataReturned: any;
   toast: any;
-  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public fcm: FcmService, public toastCtrl: ToastController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public toastCtrl: ToastController, public alertCtrl: AlertController) {
     this.tableData = [
       { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
       { 'keywordsUsed': 'more', 'total': '7', 'usage': '26.92' },
@@ -35,20 +33,6 @@ export class HomePage {
 
   ngOnInit() {
     this.useAngularLibrary();
-  }
-
-  ionViewDidLoad() {
-    this.fcm.getToken()
-    this.fcm.listenToNotifications().pipe(
-      tap(msg => {
-        this.toast = this.toastCtrl.create({
-          message: msg.body,
-          duration: 3000
-        });
-        this.toast.present();
-      })
-    )
-    .subscribe()
   }
 
   useAngularLibrary() {
