@@ -3,6 +3,11 @@ import { NavController, ModalController, ToastController, AlertController } from
 import { ModalPage } from '../modal/modal.page';
 import { ServicesService } from "../services/services.service";
 import { tap } from 'rxjs/operators';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { HttpClient } from '@angular/common/http'
+import { Response } from 'selenium-webdriver/http';
+import { Profile } from 'selenium-webdriver/firefox';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +18,12 @@ export class HomePage {
   tableData: any;
   dataReturned: any;
   toast: any;
-  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public toastCtrl: ToastController, public alertCtrl: AlertController) {
+  user: any = {};
+  fun: any;
+  userData: any;
+  error: any;
+  isLoggedIn:boolean = false;
+  constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public toastCtrl: ToastController, public alertCtrl: AlertController, private googlePlus: GooglePlus, private facebook: Facebook, private http: HttpClient) {
     this.tableData = [
       { 'keywordsUsed': 'need', 'total': '7', 'usage': '26.92' },
       { 'keywordsUsed': 'more', 'total': '7', 'usage': '26.92' },
@@ -33,6 +43,35 @@ export class HomePage {
 
   ngOnInit() {
     this.useAngularLibrary();
+    this.glogin();
+  }
+
+  glogin() {
+    this.fun = "done";
+    this.googlePlus.login({
+      'scopes': 'authResult',
+		  'webClientId': '861398522031-9qj6t451fginnhq3tcpb8bkasfk6g21p.apps.googleusercontent.com',
+		  'offline': true
+    }).then(res => {
+      console.log(res);
+      this.fun = res;
+    }).catch(err => {
+      console.error(JSON.stringify(err));
+      this.fun = "fail"
+      alert("error "+JSON.stringify(err));
+      this.fun = err;
+    });
+  }
+  
+  loginwithFB() {
+    this.facebook.login(['email', 'public_profile']).then((response: FacebookLoginResponse) => {
+      this.facebook.api('me?fields=id,name,email,frist_name,picture.width(720).height(720).as(picture_larger)', []).then(profile => {
+        this.userData = {email: profile['email'], frist_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']};
+      })
+    })
+    this.facebook.login(['email', 'public_profile']).catch(err => {
+      this.error = err;
+    });
   }
 
   useAngularLibrary() {
