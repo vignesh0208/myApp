@@ -2,12 +2,11 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, ModalController, ToastController, AlertController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { ServicesService } from "../services/services.service";
-import { tap } from 'rxjs/operators';
+
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http'
-import { Response } from 'selenium-webdriver/http';
-import { Profile } from 'selenium-webdriver/firefox';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +21,7 @@ export class HomePage {
   fun: any;
   userData: any;
   error: any;
+  value: any;
   isLoggedIn:boolean = false;
   constructor(public navCtrl: NavController, public modalController: ModalController, private servicesService: ServicesService, public toastCtrl: ToastController, public alertCtrl: AlertController, private googlePlus: GooglePlus, private facebook: Facebook, private http: HttpClient) {
     this.tableData = [
@@ -44,6 +44,18 @@ export class HomePage {
   ngOnInit() {
     this.useAngularLibrary();
     this.glogin();
+
+    this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(data => {
+      this.value= data;
+      console.log(this.value);
+    }, err => {
+      console.log(err)
+    });
+    // this.http.post('http://localhost:3100/posts/'+this.data.name, this.data).subscribe(response => {
+    //   console.log('send: '+ response )
+    // },err => {
+    //   console.log('error: '+ err); 
+    // });
   }
 
   glogin() {
@@ -58,7 +70,6 @@ export class HomePage {
     }).catch(err => {
       console.error(JSON.stringify(err));
       this.fun = "fail"
-      alert("error "+JSON.stringify(err));
       this.fun = err;
     });
   }
@@ -73,6 +84,7 @@ export class HomePage {
       this.error = err;
     });
   }
+
 
   useAngularLibrary() {
     this.lineChartData = {
