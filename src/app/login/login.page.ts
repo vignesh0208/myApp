@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
   password: any;
   value: any;
   valueD: any;
+  valueE: any;
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -25,22 +26,23 @@ export class LoginPage implements OnInit {
     }
     // console.log(this.login);
     // console.log(this.email, this.password);
-    this.http.get('http://192.168.0.157:3100/posts/'+this.login.email+'/'+this.login.pwd, this.login).subscribe(data => {
+    this.http.get('http://192.168.0.157:8080/posts/'+this.login.email+'/'+this.login.pwd, this.login).subscribe(data => {
       this.value= data;
       console.log(this.value.success);
       if(this.value.success == true) {
-        this.router.navigateByUrl('/home');
+        // this.router.navigateByUrl('/home');
         console.log(this.login)
       }
     }, err => {
+      this.valueE= err;
       console.log(err)
     });
-    // this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(data => {
-    //   this.valueD= data;
-    //   console.log(this.valueD.title);
-    // }, err => {
-    //   console.log(err)
-    // });
+    this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(data => {
+      this.valueD= data;
+      console.log(this.valueD.title);
+    }, err => {
+      console.log(err)
+    });
   }
 
 }
