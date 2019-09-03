@@ -54,7 +54,7 @@
     "express": "^4.17.1",
     "firebase-tools": "^7.2.4",
     "gradle": "^1.0.9",
-    "ionic": "^5.2.6",
+    "ionic": "^5.2.7",
     "ionic4-rating": "^1.0.9",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
@@ -122,8 +122,8 @@
       }
     },
     "platforms": [
-      "android",
-      "browser"
+      "browser",
+      "android"
     ]
   },
   "main": "index.js",
@@ -134,5 +134,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vignesh0208/myApp/issues"
-  }
+  },
+  "keywords": []
 }

@@ -5,8 +5,7 @@ import { ServicesService } from "../services/services.service";
 
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -45,12 +44,12 @@ export class HomePage {
     this.useAngularLibrary();
     this.glogin();
 
-    this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(data => {
-      this.value= data;
-      console.log(this.value);
-    }, err => {
-      console.log(err)
-    });
+    // this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(data => {
+    //   this.value= data;
+    //   console.log(this.value);
+    // }, err => {
+    //   console.log(err)
+    // });
     // this.http.post('http://localhost:3100/posts/'+this.data.name, this.data).subscribe(response => {
     //   console.log('send: '+ response )
     // },err => {

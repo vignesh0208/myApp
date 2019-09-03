@@ -4,6 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-item>
+    <ion-input [(ngModel)]="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="password" type="password" placeholder="Password" ngModel required></ion-input>
+  </ion-item>
+  <ion-button type="submit" (click)="loginForm()">Log in</ion-button>
+  <!-- <ion-list>
+    <ion-item *ngIf="valueD != null">
+      {{ valueD.title }}
+    </ion-item>
+    <ion-item *ngIf="value != null">
+      {{ value.success }}
+    </ion-item>
+  </ion-list> -->
 </ion-content>
