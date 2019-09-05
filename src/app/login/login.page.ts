@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginPage implements OnInit {
   value: any;
   valueD: any;
   valueE: any;
+  url= environment.url
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class LoginPage implements OnInit {
     }
     // console.log(this.login);
     // console.log(this.email, this.password);
-    this.http.get('http://192.168.0.157:8080/posts/'+this.login.email+'/'+this.login.pwd, this.login).subscribe(data => {
+    this.http.get(this.url+'/api/posts/'+this.login.email+'/'+this.login.pwd, this.login).subscribe(data => {
       this.value= data;
       console.log(this.value.success);
       if(this.value.success == true) {
@@ -46,7 +48,7 @@ export class LoginPage implements OnInit {
   }
 
   fbLogin() {
-    this.http.get('http://192.168.0.157:8080/auth/facebook').subscribe(data => {
+    this.http.get('https://520a8a72.ngrok.io/api/auth/facebook').subscribe(data => {
       console.log(data);
       console.log("working")
     }, err => {

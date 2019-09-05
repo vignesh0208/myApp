@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ModalPageModule } from './modal/modal.module';
 import { IonicRatingModule } from 'ionic4-rating';
-import { AuthModule } from './auth/auth.module'
 
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
@@ -20,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ModalPageModule, FormsModule, IonicRatingModule, AuthModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ModalPageModule, FormsModule, IonicRatingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,

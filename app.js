@@ -5,7 +5,7 @@ var methodOverride = require('method-override')
 var cors = require('cors');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/local', { useNewUrlParser: true });
-var findOrCreate = require('mongoose-findorcreate')
+var findOrCreate = require('mongoose-findorcreate');
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({ facebookId: Number, email: String, name: String, gender: String });
 UserSchema.plugin(findOrCreate);
@@ -35,36 +35,19 @@ passport.deserializeUser((id, done)=> {
 passport.use(new FacebookStrategy({
   clientID: '433125930638156',
   clientSecret: '8ad2adf207315b48fc53d051e0f1cea0',
-  callbackURL: "http://localhost:8080/auth/facebook/callback",
+  callbackURL: "/auth/facebook/callback",
   profileFields: ['id', 'displayName', 'photos', 'email', 'gender']
 },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
     User.findOrCreate({ facebookId: profile.id, email: profile.emails[0].value, name: profile.displayName, gender: profile.gender }, function (err, user) {
       console.log(user)
-      // if(err)
-      //     return done(err);
-      // if(user)
-          return done(err, user);
-      // else {
-      //     var newUser = new User();
-      //     newUser.facebook.id = profile.id;
-      //     newUser.facebook.token = accessToken;
-      //     newUser.facebook.name = profile.displayName;
-      //     newUser.facebook.email = profile.emails[0].value;
-      //     newUser.facebook.picture = profile.photos[0].value;
-
-      //     newUser.save(function(err){
-      //         if(err)
-      //             throw err;
-      //         return done(null, newUser);
-      //     })
-      // }
+      return done(err, user);
     });
   }
 ));
 
-app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'public_profile,email'}));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'public_profile,email,gender'}));
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', {failureRedirect: '/login'}),
