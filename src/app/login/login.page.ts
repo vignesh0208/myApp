@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
       this.value= data;
       console.log(this.value.success);
       if(this.value.success == true) {
-        // this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home');
         console.log(this.login)
       }
     }, err => {
@@ -41,6 +41,16 @@ export class LoginPage implements OnInit {
       this.valueD= data;
       console.log(this.valueD.title);
     }, err => {
+      console.log(err)
+    });
+  }
+
+  fbLogin() {
+    this.http.get('http://192.168.0.157:8080/auth/facebook').subscribe(data => {
+      console.log(data);
+      console.log("working")
+    }, err => {
+      this.valueE= err;
       console.log(err)
     });
   }
