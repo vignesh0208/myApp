@@ -23,9 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     GooglePlus,
-    Facebook,
   ],
   bootstrap: [AppComponent]
 })

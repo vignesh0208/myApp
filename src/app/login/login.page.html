@@ -12,7 +12,7 @@
     <ion-input [(ngModel)]="password" type="password" placeholder="Password" ngModel required></ion-input>
   </ion-item>
   <ion-button type="submit" (click)="loginForm()">Log in</ion-button>
-  <ion-button type="submit" (click)="fbLogin()">Facebook Login</ion-button>
+  <ion-button type="submit" (click)="loginAction();">Facebook Login</ion-button>
   <!-- <ion-list>
     <ion-item *ngIf="valueD != null">
       {{ valueD.title }}
@@ -25,4 +25,16 @@
       {{ valueE.url }}
     </ion-item> 
   </ion-list> -->
+  <ion-list>
+    <ion-item *ngIf="fb_token != null" style="word-wrap: break-word;">
+      <h4>{{ fb_token }}</h4>
+    </ion-item>
+    <ion-item *ngIf="sucess != null">
+      <h4>{{ sucess.image }}</h4>
+      <h4>{{ sucess.image[0].value }}</h4>
+      <h4>{{ sucess.name }}</h4>
+      <h4>{{ sucess.email }}</h4>
+      <h4>{{ sucess.id }}</h4>
+    </ion-item> 
+  </ion-list>
 </ion-content>
