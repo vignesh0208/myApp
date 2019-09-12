@@ -42,19 +42,7 @@ export class HomePage {
 
   ngOnInit() {
     this.useAngularLibrary();
-    this.glogin();
-
-    // this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(data => {
-    //   this.value= data;
-    //   console.log(this.value);
-    // }, err => {
-    //   console.log(err)
-    // });
-    // this.http.post('http://localhost:3100/posts/'+this.data.name, this.data).subscribe(response => {
-    //   console.log('send: '+ response )
-    // },err => {
-    //   console.log('error: '+ err); 
-    // });
+    // this.glogin();
   }
 
   glogin() {

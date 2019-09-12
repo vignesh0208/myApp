@@ -26,14 +26,15 @@ export class LoginPage implements OnInit {
 
   loginForm() {
     this.login= {
-      email: this.email,
-      pwd: this.password
+      username: this.email,
+      password: this.password
     }
     // console.log(this.login);
     // console.log(this.email, this.password);
-    this.http.get('http://192.168.0.157:8181/login/'+this.login.email+'/'+this.login.pwd, this.login).subscribe(data => {
+    this.http.post('http://192.168.0.157:8181/login/'+this.login.username+'/'+this.login.password, this.login).subscribe(data => {
       this.value= data;
       console.log(this.value.success);
+      console.log(this.value.token);
       if(this.value.success == true) {
         this.router.navigateByUrl('/home');
         console.log(this.login)
